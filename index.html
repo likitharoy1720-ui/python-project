@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eff5f3">
+    <title>Peak Horizon Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="background">
+        <div class="container">
+            <header class="page-header">
+                <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>PEAK <span>HORIZON</span></a>
+                <p class="eyebrow">TEMPERATURE PATTERN TRACKER</p>
+            </header>
+
+            <section class="content" id="top">
+                <div class="input-column">
+                    <p class="kicker">A LITTLE LOOK AHEAD</p>
+                    <h1>Peak Horizon<br><span>Tracker</span></h1>
+                    <p class="subtitle">Find how many days pass before each temperature is topped by a warmer one.</p>
+
+                    <form id="temperature-form" novalidate>
+                        <label for="temperatures">Enter temperatures, separated by commas</label>
+                        <input type="text" id="temperatures" value="73, 74, 75, 71, 69, 72, 76, 73" aria-describedby="input-hint input-error" autocomplete="off" spellcheck="false">
+                        <div class="input-meta">
+                            <span id="input-hint">For example: 73, 74, 75, 71</span>
+                            <span id="value-count">8 readings</span>
+                        </div>
+                        <p id="input-error" class="error-message" role="alert"></p>
+                        <button type="submit" id="calculate-button"><span>Track peak horizon</span><span aria-hidden="true">&#8594;</span></button>
+                        <div class="form-links">
+                            <button type="button" id="example-button">Load example</button>
+                            <button type="button" id="clear-button">Clear</button>
+                        </div>
+                    </form>
+                </div>
+
+                <section class="result-column" aria-labelledby="result-title" aria-live="polite">
+                    <div class="result-topline">
+                        <div>
+                            <p class="kicker">YOUR OUTLOOK</p>
+                            <h2 id="result-title">Days until warmer</h2>
+                        </div>
+                        <span id="result-count" class="result-count">8 DAYS</span>
+                    </div>
+                    <p class="result-caption">A zero means no warmer reading follows.</p>
+                    <p class="array-label">PEAK HORIZON</p>
+                    <output id="result" class="result-array">[1, 1, 4, 2, 1, 1, 0, 0]</output>
+                    <ol id="result-list" class="result-grid" aria-label="Days until a warmer temperature"></ol>
+                    <p id="result-status" class="result-status" role="status"></p>
+                </section>
+            </section>
+
+            <footer class="page-footer">
+                <span>READ THE RISE</span>
+                <span>Input: 73, 74, 75, 71, 69, 72, 76, 73</span>
+            </footer>
+        </div>
+
+        <div class="horizon" aria-hidden="true">
+            <div class="sun"></div>
+            <div class="mountain mountain1"></div>
+            <div class="mountain mountain2"></div>
+        </div>
+    </main>
+</body>
+</html>
+
